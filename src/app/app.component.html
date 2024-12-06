@@ -1,45 +1,59 @@
-<h1>Password Generator</h1>
+<div class="container">
+  <div class="columns is-centered m-2 mt-5">
+    <div class="box column is-half m-2">
+      <h1 class="title has-text-centered mt-2">Password Generator</h1>
 
-<div>
-  <label>Enter Password Length</label>
-  <input type="number" min="0" (input)="handleChangePasswordLength($event)" />
-</div>
+      <div class="field">
+        <label>Enter Password Length</label>
+        <input
+          class="input"
+          type="number"
+          min="0"
+          (input)="handleChangePasswordLength($event)"
+        />
+      </div>
 
-<div>
-  <label for="useLetters">Use Letters</label>
-  <input
-    type="checkbox"
-    (change)="handleUseLetters()"
-    name=""
-    id="useLetters"
-  />
-</div>
+      <div>
+        <label for="useLetters" class="">Use Letters </label>
+        <input
+          type="checkbox"
+          (change)="handleUseLetters()"
+          name=""
+          id="useLetters"
+        />
+      </div>
 
-<div>
-  <label for="useNumbers">Use Numbers</label>
-  <input type="checkbox" (change)="handleUseNumbers()" id="useNumbers" />
-</div>
+      <div>
+        <label for="useNumbers">Use Numbers </label>
+        <input type="checkbox" (change)="handleUseNumbers()" id="useNumbers" />
+      </div>
 
-<div>
-  <label for="useSymbols">Use Symbols</label>
-  <input
-    type="checkbox"
-    (change)="handleUseSymbols()"
-    name=""
-    id="useSymbols"
-  />
-</div>
+      <div>
+        <label for="useSymbols">Use Symbols </label>
+        <input
+          type="checkbox"
+          (change)="handleUseSymbols()"
+          name=""
+          id="useSymbols"
+        />
+      </div>
 
-<div>
-  <button
-    (click)="onButtonClick()"
-    [disabled]="!(passwordLength && (useLetters || useSymbols || useNumbers))"
-  >
-    Generate
-  </button>
-</div>
+      <div>
+        <button
+          (click)="onButtonClick()"
+          [disabled]="
+            !(passwordLength && (useLetters || useSymbols || useNumbers))
+          "
+          class="button my-2"
+        >
+          Generate
+        </button>
+      </div>
 
-<div>
-  <label for="">Generated Password</label>
-  <input type="text" name="" id="" [value]="password" />
+      <div class="field mt-4">
+        <label for="">Generated Password</label>
+        <input type="text" name="" id="" [value]="password" class="input" />
+      </div>
+    </div>
+  </div>
 </div>
