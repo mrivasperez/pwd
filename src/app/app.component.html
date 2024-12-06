@@ -6,22 +6,24 @@
 
 <div>
   <label>Use Letters</label>
-  <input type="checkbox" name="" id="" />
+  <input type="checkbox" (change)="handleUseLetters()" name="" id="" />
 </div>
 
 <div>
   <label>Use Numbers</label>
-  <input type="checkbox" name="" id="" />
+  <input type="checkbox" (change)="handleUseNumbers()" id="" />
 </div>
 
 <div>
   <label>Use Symbols</label>
-  <input type="checkbox" name="" id="" />
+  <input type="checkbox" (change)="handleUseSymbols()" name="" id="" />
 </div>
 
-<button>Generate</button>
+<div>
+  <button (click)="onButtonClick()">Generate</button>
+</div>
 
 <div>
   <label for="">Generated Password</label>
-  <input type="text" name="" id="" />
+  <input type="text" name="" id="" [value]="password" />
 </div>
