@@ -29,9 +29,21 @@ export class AppComponent {
 
   /**Generate password.*/
   onButtonClick() {
-    console.log(this.useLetters);
-    console.log(this.useNumbers);
-    console.log(this.useSymbols);
-    this.password = 'Password!!!';
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '123456789';
+    const symbols = '!@#$%^&*()';
+
+    let validChars = '';
+    if (this.useLetters) validChars += letters;
+    if (this.useNumbers) validChars += numbers;
+    if (this.useSymbols) validChars += symbols;
+
+    let generatedPassword = '';
+    for (let i = 0; i < this.passwordLength; i++) {
+      const index = Math.floor(Math.random() * validChars.length);
+      generatedPassword += validChars[index];
+    }
+
+    this.password = generatedPassword;
   }
 }

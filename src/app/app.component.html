@@ -2,12 +2,7 @@
 
 <div>
   <label>Enter Password Length</label>
-  <input
-    type="number"
-    min="0"
-    (input)="handleChangePasswordLength($event)"
-    pattern="[0-9]*"
-  />
+  <input type="number" min="0" (input)="handleChangePasswordLength($event)" />
 </div>
 
 <div>
@@ -26,7 +21,12 @@
 </div>
 
 <div>
-  <button (click)="onButtonClick()">Generate</button>
+  <button
+    (click)="onButtonClick()"
+    [disabled]="!(passwordLength && (useLetters || useSymbols || useNumbers))"
+  >
+    Generate
+  </button>
 </div>
 
 <div>
