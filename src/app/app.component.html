@@ -49,8 +49,8 @@
           Generate
         </button>
       </div>
-
-      <div class="field mt-4">
+    
+      <div class="field mt-4" *ngIf="password">
         <label for="">Generated Password</label>
         <input type="text" name="" id="" [value]="password" class="input" />
       </div>
