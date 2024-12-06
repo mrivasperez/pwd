@@ -1,7 +1,8 @@
 <h1>Password Generator</h1>
 
 <div>
-  <label> Enter Password Length </label> <input type="number" min="0" />
+  <label>Enter Password Length</label>
+  <input type="number" min="0" (input)="handleChangePasswordLength($event)" />
 </div>
 
 <div>
