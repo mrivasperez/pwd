@@ -2,7 +2,12 @@
 
 <div>
   <label>Enter Password Length</label>
-  <input type="number" min="0" (input)="handleChangePasswordLength($event)" />
+  <input
+    type="number"
+    min="0"
+    (input)="handleChangePasswordLength($event)"
+    pattern="[0-9]*"
+  />
 </div>
 
 <div>

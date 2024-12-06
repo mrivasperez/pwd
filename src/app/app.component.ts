@@ -12,8 +12,10 @@ export class AppComponent {
   passwordLength = 0;
   handleChangePasswordLength = (event: Event) => {
     const value = (event.target as HTMLInputElement).value;
-    console.log(typeof value);
-    this.passwordLength = Number(value);
+    const parsedValue = parseInt(value);
+    if (!isNaN(parsedValue)) {
+      this.passwordLength = parsedValue;
+    }
   };
 
   useLetters = false;
